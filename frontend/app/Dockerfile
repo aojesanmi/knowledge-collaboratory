@@ -1,11 +1,12 @@
 FROM node:16-alpine
 
-# Not used in prod, only used for development
+# NOT USED in prod, only used for development with hot reload
 
 WORKDIR /webapp
 ARG ORCID_CLIENT_ID
 ARG ORCID_CLIENT_SECRET
-ARG OAUTH_REDIRECT_FRONTEND
+ARG FRONTEND_URL
+ARG API_URL
 
 # Install the react-taggy lib from git to get latest fix:
 WORKDIR /opt

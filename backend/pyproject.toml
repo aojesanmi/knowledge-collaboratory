@@ -1,37 +1,28 @@
 [tool.poetry]
 name = "knowledge-collaboratory-api"
 version = "0.1.0"
-description = ""
+description = "An API for the Knowledge Collaboratory developed at the Institute of Data Science at Maastricht University"
 authors = ["Vincent Emonet <vincent.emonet@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-uvicorn = "^0.15.0"
-fastapi = "^0.68.1"
+python = ">=3.9,<3.10"
 python-multipart = "^0.0.5"
 requests = "^2.23.0"
-celery = "^4.4.2"
-tenacity = "^6.1.0"
-pydantic = "^1.4"
+httpx = "^0.21.1"
+pydantic = "^1.9"
+fastapi = "^0.68.1"
+uvicorn = "^0.15.0"
 gunicorn = "^20.0.4"
-pytest = "^5.4.1"
-motor = "^2.5.1"
 Authlib = "^0.15.4"
 itsdangerous = "^2.0.1"
-httpx = "0.21.1"
-extruct = "^0.13.0"
-PyLD = "^2.0.3"
-google = "^3.0.0"
-beautifulsoup4 = "^4.10.0"
-strawberry-graphql = {extras = ["asgi"], version = "^0.83.4"}
-reasoner-pydantic = ">=1.2.0.4"
-reasoner-validator = "^2.1.0"
+reasoner-pydantic = "^2.2.3"
+reasoner-validator = "^2.2.5"
+rdflib = "^6.1.1"
 SPARQLWrapper = "^1.8.5"
+PyShEx = "^0.8.1"
 transformers = "^4.17.0"
 spacy = {extras = ["cuda110"], version = "^3.2.3"}
 spacy-transformers = "^1.1.5"
-PyShEx = "0.8.1"
-rdflib = ">=6.1.1"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.770"
@@ -48,7 +39,17 @@ multi_line_output = 3
 include_trailing_comma = true
 force_grid_wrap = 0
 line_length = 88
+
+[tool.mypy]
+plugins = [
+  "pydantic.mypy"
+]
+ignore_missing_imports = true
+
+
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+# requires = ["poetry>=0.12"]
+# build-backend = "poetry.masonry.api"
 

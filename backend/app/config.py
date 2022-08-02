@@ -12,7 +12,9 @@ class Settings(BaseSettings):
     DEV_URL: str = 'https://api.collaboratory.semanticscience.org'
 
 
-    BIOLINK_VERSION: str = "v.2.4.4"
+    BIOLINK_VERSION: str = "2.3.0"
+    TRAPI_VERSION: str = "1.2.0"
+    
 
     # Those defaults are used by GitHub Actions for testing
     # The settings used by Docker deployment are in the .env file
@@ -32,7 +34,7 @@ class Settings(BaseSettings):
 
     ORCID_CLIENT_ID: Optional[str]
     ORCID_CLIENT_SECRET: Optional[str]
-    OAUTH_REDIRECT_URI: str = 'http://localhost/api/auth'
+    BACKEND_URL: str = 'http://localhost'
 
     API_PATH: str = ""
     SECRET_KEY: str = secrets.token_urlsafe(32)
